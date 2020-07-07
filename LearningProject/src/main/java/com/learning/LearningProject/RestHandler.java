@@ -15,8 +15,8 @@ public class RestHandler {
 	@Autowired
 	private RestTemplate restTemplate;
 	
-	@Autowired
-	WebClient.Builder webClientBuilder;
+//	@Autowired
+//	WebClient.Builder webClientBuilder;
 	
 	@RequestMapping("/getResponseService1/")
 	public ResponseEntity<?> getResponse() {
@@ -28,20 +28,20 @@ public class RestHandler {
 //		WebClient.Builder webClientBuilder = WebClient.builder(); //Not required as called from Bean
 		
 //		Using rest Template from Bean
-		Employee emp = restTemplate.getForObject("http://localhost:8082/getResponseService2/", Employee.class);
+		Employee emp = restTemplate.getForObject("http://service2/getResponseService2/", Employee.class);
 		
-		Employee emp2 = webClientBuilder.build()
-						.get()
-						.uri("http://localhost:8082/getResponseService2/")
-						.retrieve()
-						.bodyToMono(Employee.class)
-						.block();
+//		Employee emp2 = webClientBuilder.build()
+//						.get()
+//						.uri("http://localhost:8082/getResponseService2/")
+//						.retrieve()
+//						.bodyToMono(Employee.class)
+//						.block();
 		
 		
 		return ResponseEntity.status(HttpStatus.OK)
 				.header("Param 1", "Value 2")
 				.body("Hello from Microservice 1: Response from 2 : " +
-				emp2);
+				emp);
 	}
 
 }
