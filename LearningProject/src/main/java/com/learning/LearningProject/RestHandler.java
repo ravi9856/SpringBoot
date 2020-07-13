@@ -28,7 +28,7 @@ public class RestHandler {
 //		WebClient.Builder webClientBuilder = WebClient.builder(); //Not required as called from Bean
 		
 //		Using rest Template from Bean
-		Employee emp = restTemplate.getForObject("http://service2/getResponseService2/", Employee.class);
+//		Employee emp = restTemplate.getForObject("http://service2/getResponseService2/", Employee.class);
 		
 //		Employee emp2 = webClientBuilder.build()
 //						.get()
@@ -41,7 +41,7 @@ public class RestHandler {
 		return ResponseEntity.status(HttpStatus.OK)
 				.header("Param 1", "Value 2")
 				.body("Hello from Microservice 1: Response from 2 : " +
-				emp);
+				"emp");
 	}
 
 }
