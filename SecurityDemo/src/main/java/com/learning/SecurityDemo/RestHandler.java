@@ -6,10 +6,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RestHandler {
 	
-	@RequestMapping("/checkSecurity/")
-	public String getResponse() {
+	@RequestMapping("/general")
+	public String getGeneral() {
 		
-		return "HELLO from Security App!!";
+		return "<h1>HELLO ALL!!</h1>";
+	}
+	
+	@RequestMapping("/user")
+	public String getUser() {
+		
+		return "<h1>HELLO User!!</h1>";
+	}
+	
+	@RequestMapping("/admin")
+	public String getAdmin() {
+		
+		return "<h1>HELLO Admin!!</h1>";
 	}
 
 }
